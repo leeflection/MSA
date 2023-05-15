@@ -4,12 +4,12 @@ server:
 
 spring:
   application:
-    name: user-service
+    name: ${NAME}
 
 eureka:
-  instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
-  client:
+   instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+   client:
     register-with-eureka: true
     # Eureka ??? ?? ?????? ??? ????? ??? ???
     # ???? ?? -> fetch-registry = true ?? ? ??? ???? ??
